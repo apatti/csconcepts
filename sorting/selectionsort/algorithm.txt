@@ -1,0 +1,30 @@
+The Selection sort algorithm is based on the idea of finding the minimum or maximum element
+in an unsorted array and then putting it in its correct position in a sorted array.
+
+1. Iterate over the input array
+2. Find the minimum element in input array.
+3. Swap it with current index.
+4. Repeat steps 2 and 3.
+
+Pseudo Code:
+
+for(int i=0;i<input.len-1;i++)
+{
+  int minimum = i;
+  for(int j=i+1;j<n;j++)
+  {
+    if(input[j]<input[minimum])
+    {
+      minimum = j;
+    }
+  }
+  if(minimum!=i)
+  {
+    swap(input[i],input[minimum])
+  }
+}
+
+Complexity:
+O(n^2)
+
+Sort order: Inplace

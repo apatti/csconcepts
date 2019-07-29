@@ -4,6 +4,7 @@ const assert = require('assert');
 const readline = require('readline');
 const fs = require('fs');
 const bubbleSort = require('../../bubbleSort/javascript/bubbleSort.js');
+const selectionSort = require('../../selectionSort/javascript/selectionSort.js');
 const once = require('events');
 
 function TestSorting(func, input,expected)
@@ -12,6 +13,11 @@ function TestSorting(func, input,expected)
   assert(output.length==expected.length && output.every((element,index)=>{
     return element === expected[index];
   }),"\nReturned:"+output+"\nExpected:"+expected);
+}
+
+var functionMap = {
+  "bubblesort":bubbleSort.Sort,
+  "selectionsort":selectionSort.Sort
 }
 
 function main(method)
@@ -42,11 +48,11 @@ function main(method)
           output = testData[i+1].split(',').map((s)=>{return parseInt(s)});;
         }
 
-        TestSorting(bubbleSort.Sort,input,output);
+        TestSorting(functionMap[method],input,output);
     }
 
   });
 
 }
 
-main("");
+main("selectionsort");
