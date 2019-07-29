@@ -1,4 +1,4 @@
 #bubble sort
 
-def Sort(input -> arr) -> arr:
-    pass
+def Sort(input: list) -> list:
+    return input
