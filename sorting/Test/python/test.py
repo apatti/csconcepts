@@ -1,3 +1,6 @@
+import sys
+sys.path.append("{}/{}".format(sys.path[0],"../../bubblesort/python/"))
+print(sys.path)
 import bubbleSort
 import argparse
 
