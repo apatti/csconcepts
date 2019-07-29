@@ -10,7 +10,6 @@ functionMap = {
 }
 
 def TestSorting(function,input,expected):
-    print(type(input))
     output = function(input)
     assert output==expected,"\nReturned:{}\nExpected:{}".format(output,expected)
 
@@ -21,10 +20,10 @@ if __name__ == '__main__':
         testData = file.readlines()
 
     for i in range(0,len(testData),2):
-        testNumber = ((i+1)//2)
+        testNumber = (i//2)+1
         print("Testing:{}".format(testNumber))
-        input = [int(s.rstrip()) for s in testData[i].split(',')]
-        output = [int(s.rstrip()) for s in testData[i+1].split(',')]
+        input = [int(s.rstrip()) for s in testData[i].split(',') if s.rstrip()!='']
+        output = [int(s.rstrip()) for s in testData[i+1].split(',') if s.rstrip()!='']
         if sortMethod.lower()=='all':
             for function in functionMap.values():
                 TestSorting(function,input,output)

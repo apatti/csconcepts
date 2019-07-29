@@ -1,0 +1,21 @@
+Bubble sort
+
+Bubble sort is based on the idea of repeatedly comparing pairs of adjacent elements
+and then swapping their positions if they exist in the wrong order
+
+1. Iterate through the list.
+2. Compare two elements at a time and swap if not in order.
+3. Repeat 2 until all elements are sorted.
+
+Pseudo code
+
+for(i=0;i<input.len-1;i++)
+{
+  for(j=0,j<input.len-i-1,j++)
+  {
+    if(input[j]>input[j+1])
+    {
+      swap(input[j],input[j+1])
+    }
+  }
+}
