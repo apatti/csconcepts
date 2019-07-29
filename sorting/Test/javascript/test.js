@@ -3,8 +3,9 @@
 const assert = require('assert');
 const readline = require('readline');
 const fs = require('fs');
-const bubbleSort = require('../../bubbleSort/javascript/bubbleSort.js');
-const selectionSort = require('../../selectionSort/javascript/selectionSort.js');
+const bubbleSort = require('../../bubblesort/javascript/bubbleSort.js');
+const selectionSort = require('../../selectionsort/javascript/selectionSort.js');
+const insertionSort = require('../../insertionsort/javascript/insertionSort.js');
 const once = require('events');
 
 function TestSorting(func, input,expected)
@@ -17,7 +18,8 @@ function TestSorting(func, input,expected)
 
 var functionMap = {
   "bubblesort":bubbleSort.Sort,
-  "selectionsort":selectionSort.Sort
+  "selectionsort":selectionSort.Sort,
+  "insertionsort":insertionSort.Sort
 }
 
 function main(method)
@@ -55,4 +57,4 @@ function main(method)
 
 }
 
-main("selectionsort");
+main("insertionsort");

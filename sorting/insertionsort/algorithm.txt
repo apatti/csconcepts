@@ -1,0 +1,44 @@
+Insertion sort is based on the idea that one element from the input elements is
+consumed in each iteration to find its correct position i.e, the position to
+which it belongs in a sorted array.
+
+Example:
+Input: 4121,752,2185,708,4946,3154,3173,272,-902,2573
+Steps:
+i=1
+  key=752
+  j=0
+    Input:752,4121,2185,708,4946,3154,272,-902,2573
+i=2
+  key=2185
+  j=1
+    Input: 752,2185,4121,708....
+i=3
+  key=708
+  j=2
+    swap(3,2)
+    Input: 752,2185,708,4121
+  j=1
+    swap(2,1)
+    Input: 752,708,2185,4121
+  j=0
+    swap(0,1)
+    Input: 708,752,2185,4121
+Pseudo Code
+if input.len<=1 return input
+for(i=1;i<input.length;i++)
+{
+  for(j=i-1;j>=0;j--)
+  {
+    if(key>input[j])
+    {
+      break;
+    }
+    swap(input[j+1],input[j])
+  }
+}
+
+Complexity:
+O(n^2)
+
+Sort Order: Inplace

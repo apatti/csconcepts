@@ -1,9 +1,11 @@
 import sys
 sys.path.append("{}/{}".format(sys.path[0],"../../bubblesort/python/"))
 sys.path.append("{}/{}".format(sys.path[0],"../../selectionsort/python/"))
+sys.path.append("{}/{}".format(sys.path[0],"../../insertionsort/python/"))
 #print(sys.path)
 import bubbleSort
 import selectionSort
+import insertionSort
 import argparse
 
 parser = argparse.ArgumentParser(description="Enter Sort method, use all for testing all methods. Default is 'all'")
@@ -12,7 +14,8 @@ args = parser.parse_args()
 
 functionMap = {
     "bubblesort":bubbleSort.Sort,
-    "selectionsort":selectionSort.Sort
+    "selectionsort":selectionSort.Sort,
+    "insertionsort":insertionSort.Sort
 }
 
 def TestSorting(function,input,expected):
