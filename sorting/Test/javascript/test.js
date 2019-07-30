@@ -7,6 +7,7 @@ const bubbleSort = require('../../bubblesort/javascript/bubbleSort.js');
 const selectionSort = require('../../selectionsort/javascript/selectionSort.js');
 const insertionSort = require('../../insertionsort/javascript/insertionSort.js');
 const mergeSort = require('../../mergesort/javascript/mergeSort.js');
+const quickSort = require('../../quicksort/javascript/quickSort.js');
 const once = require('events');
 
 function TestSorting(func, input,expected)
@@ -21,7 +22,8 @@ var functionMap = {
   "bubblesort":bubbleSort.Sort,
   "selectionsort":selectionSort.Sort,
   "insertionsort":insertionSort.Sort,
-  "mergesort":mergeSort.Sort
+  "mergesort":mergeSort.Sort,
+  "quicksort":quickSort.Sort
 }
 
 function main(method)

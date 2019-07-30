@@ -1,0 +1,38 @@
+Quick sort is based on the divide-and-conquer approach based on the idea of
+choosing one element as a pivot element and partitioning the array around it
+such that: Left side of pivot contains all the elements that are less than the
+pivot element Right side contains all elements greater than the pivot
+
+Example:
+Input: 4121,752,2185,708,4946,3154,3173,272,-902,2573
+Pivot 4121
+4121,752,2185,708,2573,3154,3173,272,-902,4946
+[-902,752,2185,708,2573,3154,3173,272],4121,[4946]
+
+Pseudo Code:
+function partition(input,start,end)
+{
+  pivot=input[start];
+  i=start+1;
+  j=end;
+  while(start<end)
+  {
+    while(pivot>=input[i] and i<j)
+    {
+      i++;
+    }
+    while(pivot<input[j] and j>i)
+    {
+      j--;
+    }
+    if(i<j)
+    {
+      swap(input[i],input[j])
+    }
+  }
+  if(pivot>input[j])
+  {
+    swap(input[start],input[j])
+  }
+  return
+}
