@@ -16,14 +16,8 @@ def merge(left:list,right:list)->list:
             merged.append(left[i])
             i+=1
             continue
-        if left[i]>right[j]:
+        else:
             merged.append(right[j])
-            j+=1
-            continue
-        if left[i]==right[j]:
-            merged.append(left[i])
-            merged.append(right[j])
-            i+=1
             j+=1
             continue
 

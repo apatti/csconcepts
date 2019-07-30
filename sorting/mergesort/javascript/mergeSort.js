@@ -22,17 +22,10 @@ function merge(left,right)
       i++;
       continue;
     }
-    if(left[i]>right[j])
+    else
     {
       merged.push(right[j])
       j++;
-      continue;
-    }
-    if(left[i]==right[j])
-    {
-      merged.push(left[i]);
-      merged.push(right[j]);
-      i++;j++;
       continue;
     }
   }
