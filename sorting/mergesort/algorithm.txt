@@ -1,0 +1,61 @@
+Merge sort is a divide-and-conquer algorithm based on the idea of breaking down
+a list into several sub-lists until each sublist consists of a single element
+and merging those sublists in a manner that results into a sorted list.
+
+1. Divide the given array into N sublists of size 1.
+2. Merge adjacent cells.
+3. Repeat till a single list is returned.
+
+Pseudo Code:
+func merge_sort(input)
+{
+  if(input.length<=1)
+  {
+    return input
+  }
+  midPoint = input.length/2
+  left = merge_sort(input[0:midPoint])
+  right = merge_sort(input[midPoint:])
+  return merge(left,right)
+}
+
+func merge(left,right)
+{
+  merged = []
+  for(i=0,j=0;i<left.length&&j<right.length;)
+  {
+    if(left[i]<right[j])
+    {
+      merged.push(left[i]);
+      i++;
+      continue;
+    }
+    if(left[i]>right[j])
+    {
+      merged.push(right[j])
+      j++;
+      continue;
+    }
+    if(left[i]==right[j])
+    {
+      merged.push(left[i]);
+      merged.push(right[j]);
+      i++;
+      j++;
+    }
+  }
+  if(i<left.length)
+  {
+    merged.push(left[i:]);
+  }
+  if(j<right.length)
+  {
+    merged.push(right[j:])
+  }
+  return merged;
+}
+
+Complexity:
+O(NlogN)
+
+Inplace Sort: False

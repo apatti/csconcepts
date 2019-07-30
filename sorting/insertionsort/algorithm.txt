@@ -41,4 +41,4 @@ for(i=1;i<input.length;i++)
 Complexity:
 O(n^2)
 
-Sort Order: Inplace
+Inplace Sort: true
